@@ -10,6 +10,8 @@ paths:
       operationId: getUserById
       tags:
         - users
+      security:
+        - ADMINISTRATOR: []
       parameters:
         - name: userId
           in: path
@@ -50,4 +52,9 @@ components:
           format: int64
         message:
           type: string
+  securitySchemes:
+    ADMINISTRATOR:
+      description: "Privilege for administrative apis"
+      type: http
+      scheme: basic
 
