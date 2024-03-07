@@ -2,12 +2,7 @@ package io.murgu.backoffice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
 
 @SpringBootApplication
 public class BackofficeApplication {
