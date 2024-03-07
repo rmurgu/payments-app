@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>payments-app</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>database</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+<!--        <flyway.url>jdbc:mysql://localhost:3306/payments-db</flyway.url>-->
+<!--        <flyway.user>payments_admin</flyway.user>-->
+<!--        <flyway.password>admin</flyway.password>-->
+<!--        <flyway.schemas>payments-db</flyway.schemas>-->
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>maven central</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+<!--        <repository>-->
+<!--            <id>redgate</id>-->
+<!--            <url>https://download.red-gate.com/maven/release</url>-->
+<!--        </repository>-->
+    </repositories>
+
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>redgate</id>-->
+<!--            <url>https://download.red-gate.com/maven/release</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>10.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>10.8.1</version>
+        </dependency>
+
+<!--        FLYWAY RED-GATE DEPENDENCIES-->
+<!--        <dependency>-->
+<!--            <groupId>com.redgate.flyway</groupId>-->
+<!--            <artifactId>flyway-mysql</artifactId>-->
+<!--            <version>10.8.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.redgate.flyway</groupId>-->
+<!--            <artifactId>flyway-maven-plugin</artifactId>-->
+<!--            <version>10.8.1</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.8.1</version>
+                <configuration>
+<!--                    <url>${flyway.url}</url>-->
+<!--                    <user>${flyway.user}</user>-->
+<!--                    <password>${flyway.password}</password>-->
+<!--                    <schemas>-->
+<!--                        <schema>${flyway.schemas}</schema>-->
+<!--                    </schemas>-->
+                    <cleanDisabled>false</cleanDisabled>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

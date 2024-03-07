@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: Users Controller
+  description: Users Controller
+  version: 1.0.0
+paths:
+  /v1/users/{userId}:
+    get:
+      summary: Return user by Id
+      operationId: getUserById
+      tags:
+        - users
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: the id of the user to retrieve
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    User:
+      properties:
+        id:
+          type: integer
+          format: int64
+        user_name:
+          type: string
+        role:
+          type: string
+    Error:
+      properties:
+        code:
+          type: integer
+          format: int64
+        message:
+          type: string
+
